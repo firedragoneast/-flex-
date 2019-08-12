@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+ul {
+    width: 90px;
+    height: 90px;
+    margin: 15px;
+    background-color: pink;
+    border-radius: 10px;
+    display: flex;
+    float: left;
+    // 居中
+    justify-content: center;
+    // 定义子项在另一个方向上的对齐模式
+    align-items: center;
+    li {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 10px;
+        align-content: center;
+    };
+    &:nth-child(2) {
+        // 盒子在主轴上的对齐方向
+        justify-content: space-around;
+        // 规定项目的方向
+        flex-direction: column;
+    };
+    &:nth-child(3) {
+       justify-content: space-around;
+       li {
+           margin: 5px;
+       }
+       li:nth-child(1) {
+           // 定义子项单独在另一个方向上的对齐方式
+           align-self: flex-start;
+       }
+       li:nth-child(3) {
+           // 定义子项单独在另一个方向上的对齐方式
+           align-self: flex-end;
+       }
+    };
+    &:nth-child(4) {
+        // 在必要的时候拆行
+        flex-wrap: wrap;
+        justify-content: space-around;
+        li {
+            margin: 10px;
+        }
+    }
+
+}
